@@ -1,0 +1,157 @@
+public class LinkedListOperations implements ILinkedListOperations{
+	
+	Node head;
+	Node tail;
+	int count = 0;
+	
+	@Override
+	public void add(int val)
+	{
+		addAtLast(val);
+	}
+	
+	@Override
+	public void printLinkedList()
+	{
+		Node startNode = head; // DONT TRAVERSE HEAD NODE AT ANY COST, INSTEAD CREATE A COPY OF HEAD
+		
+		while(startNode != null)
+		{
+			System.out.print(startNode.data + " ");
+			startNode = startNode.next;
+		}
+	}
+	
+	@Override
+	public void addAtFirst(int val)
+	{
+		if(head == null)
+		{
+			Node firstNode = new Node(val);
+			head = tail = firstNode;  // Both head and tail point towards node
+			count++;
+		}
+		else {
+			Node firstNode = new Node(val);
+			firstNode.next = head;
+			head = firstNode;
+			count++;
+		}
+	}
+	
+	@Override
+	public void addAtLast(int val)
+	{
+		if(head == null)
+		{
+			Node newNode = new Node(val);
+			head = tail = newNode;
+			count++;
+		}
+		else {
+			Node newNode = new Node(val);
+			tail.next = newNode;
+			tail = newNode;
+			count++;
+		}
+	}
+	
+	@Override
+	public void insertAtAnyPosition(int pos, int val)
+	{
+		if(head == null)
+		{
+			Node newNode = new Node(val);
+			head = tail = newNode;
+		}
+		else {
+			if(pos == 1)
+			{
+				addAtFirst(val);
+				return;
+			}
+			if(pos > count)
+			{
+				System.out.println("INVALID POSITION : " + pos);
+				return; 
+			}
+			Node insertedNode = new Node(val);
+			Node currentNode = head;
+			for(int i=1;i<pos-1;i++)
+			{
+				currentNode = currentNode.next;
+			}
+			insertedNode.next = currentNode.next;
+			currentNode.next = insertedNode;
+			count++;
+		}
+	}
+	
+	public int sizeOfLinkedList() {
+		return count;
+	}
+
+	public boolean isEmpty()
+	{
+		if(head == null)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	public void removeFirst() {
+	    if (isEmpty()) {
+	        System.out.println("LINKED LIST IS EMPTY");
+	        return;
+	    }
+
+	    if (count == 1) {
+	        head = tail = null;
+	    } else {
+	        head = head.next;
+	    }
+	    count--;
+	}
+
+	public void removeLast()
+	{
+		if(isEmpty())
+		{
+			System.out.println("LINKED LIST IS EMPTY");
+			return;
+		}
+		Node secondLastNode = head;
+		while(secondLastNode.next != tail)
+		{
+			secondLastNode = secondLastNode.next;
+		}
+		tail = secondLastNode;
+		tail.next = null;
+		
+		count--;
+	}
+	
+	@Override
+	public void deleteAtAnyPosition(int pos)
+	{
+		if(isEmpty())
+		{
+			System.out.println("LINKED LIST IS EMPTY");
+			return;
+		}
+		else {
+			Node deletedNode = head;
+			Node nextNode = deletedNode.next;
+			for(int i=1;i<pos-1;i++)
+			{
+				deletedNode = deletedNode.next;
+				nextNode = nextNode.next;
+			}
+			
+			deletedNode.next = nextNode.next;
+			nextNode.next = null;
+		}
+		count--;
+	}
+}

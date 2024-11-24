@@ -1,0 +1,28 @@
+1. Java is a object oriented programming[ OOP ] language renowed for its WORA [ Write Once Run Anywhere ]
+
+2. Capability, enabling code to run on any device with a JVM [ Java Virtual Machine ]. It is widely used for developing applications ranging from console, web, mobile and IOT ,etc services to enterprise systems.
+
+3. James Gosling and his team developed JAVA at SUN MICROSYSTEMS which was later acquired by oracle corporation in the early 1990s. This project initially aim to create software for consumer electronics.
+
+Note : 
+1991- The project initially named as "OAK" , began with the intent to develop software for hand-held devices.
+1995- JAVA 1.0 was officially released. It included 'Applets' for web browsers
+1996- JAVA 1.1 brought significant improvements and introduced JFC [ Java Foundation Classes ] for GUI development
+1998- JAVA 2 [ J2SE 1.2 ] introduced the modern java platform including JDK [ Java Develpoment Kit ] and JRE [ Java Runtime Environment ] 
+2004- JAVA 5 [ J2SE 5.0 ] introduced major language enhancements like generics, enum types, and annotations
+2011- ORACLE corp. acquired SUN MICROSYSTEMS 
+2014- JAVA 8 was introduced. JAVA 8 brought lambda expr, Stream API and other functional programming features
+2017- JAVA 9 was released introducing module system and they named it as PROJECT JIGSAW to improve scalability and maintainability
+2021- JAVA 16 was introduced with new features like sealed classes and improvements in garbage collection
+
+Features of Java :
+1.Simple
+2.Object-oriented
+3.High preformance
+4.Secure
+5.Architecture neutral
+6.Portable
+7.Robust
+8.Dynamic
+9.Multithreaded
+10.Distributed

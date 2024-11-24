@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <welcome-file-list>
+        <welcome-file>MainServlet</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- Filter Configuration -->
+    <filter>
+        <filter-name>SessionFilter</filter-name>
+        <filter-class>SessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>NotificationEndpoint</servlet-name>
+        <servlet-class>NotificationEndpoint</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NotificationEndpoint</servlet-name>
+        <url-pattern>/notifications</url-pattern>
+    </servlet-mapping>
+
+<!--    &lt;!&ndash; Security Filter &ndash;&gt;-->
+<!--    <filter>-->
+<!--        <filter-name>SecurityFilter</filter-name>-->
+<!--        <filter-class>SecurityFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>SecurityFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+</web-app>
